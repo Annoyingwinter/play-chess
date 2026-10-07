@@ -1,36 +1,42 @@
-# GitHub README Chess Tournament
+# ♟️ Annoyingwinter 的公开棋局
 
-This template repository contains the source code for a Python Chess bot, together with GitHub Workflows in order to allow ANYONE to play chess from a README file. Want to see this in action? Go to my [profile page](https://github.com/marcizhu) and feel free to try it out by yourself!
+一盘**谁都能下**的公开慢棋。走子不需要会代码：在下面的着法表里点一步棋、
+提交那个自动填好的 issue，机器人几秒内应招，你的 GitHub 头像会留在棋谱里。
 
+现在轮到 <!-- BEGIN TURN -->?<!-- END TURN --> 方走子。
 
-## Steps to make your own repo
+<!-- BEGIN CHESS BOARD -->
+(棋盘在这里生成)
+<!-- END CHESS BOARD -->
 
-1. Create a new repository based on this template.
+**轮到你了！从下面的着法表里挑一步：**
 
-2. (Optional) Tweak the bot settings to your linking. These settings are located in the file `data/settings.yaml`. You can leave them as they are if you don't want to change anything.
+<!-- BEGIN MOVES LIST -->
+(着法表在这里生成)
+<!-- END MOVES LIST -->
 
-3. Rename the folder `.github/_workflows` to `.github/workflows` in order to enable the GitHub Actions workflow that does all the magic.
+玩得开心？把链接甩给朋友，让 TA 接着走一步！
 
-4. Delete this README file and make your own `README.md`. I recommend using `README.template` as a starting point. Keep in mind that the text between the HTML comments like `<!-- BEGIN CHESS BOARD -->` and `<!-- END CHESS BOARD -->` will be recreated after each move, so don't waste your time changing anything in there ;)
+#### 这是怎么运作的
 
-5. Commit and push all the settings and create a new issue with title `Chess: Start new game` (case insensitive). If all goes well, after a few seconds a new response should appear telling you that a new game was successfully started and the issue should be automatically closed. After that, refresh your repository in order to see the changes done by the bot and your repository is ready to go! Just click on any of the links on the table of available moves, click on "Submit new issue" and after a few seconds, the move will be played!
+你提交着法 issue 后会触发一个 GitHub Action：Python 脚本走这步棋、重新生成棋盘并自动提交到本仓库。每盘棋都归档在 `games/` 目录（PGN 格式，可下载到棋软里复盘，每步棋都标注了是谁走的）。
 
-Don't forget to share, have fun and enjoy your games!
+发现 bug？欢迎开 issue。
 
+<details>
+  <summary>本局最近 5 步</summary>
+<!-- BEGIN LAST MOVES -->
+(这里自动生成)
+<!-- END LAST MOVES -->
+</details>
 
-## Some extra information
+<details>
+  <summary>历史所有棋局走子榜</summary>
+<!-- BEGIN TOP MOVES -->
+(这里自动生成)
+<!-- END TOP MOVES -->
+</details>
 
-All games are automatically archived into the `games/` folder in PGN format. The current game is always called `games/current.pgn`, and the archived games always follow the pattern `games/game-yyyymmdd-HHMMSS.pgn`. You can download the archived games and review them using an external application. Each move in the PGN file has a comment specifying who performed each move so you can see which moves you played!
+---
 
-Finally, if you find any problem, feel free to submit an issue or open a PR and I will be more than happy to take a look at it!
-
-
-## Credits
-
-Thanks to [@timburgan](https://github.com/timburgan) for the initial idea. This project is heavily inspired on his. Also, big thanks to the authors and contributors of [python-chess](https://python-chess.readthedocs.io/en/latest/) and [PyGithub](https://pygithub.readthedocs.io/en/latest/). Without their libraries, this project would have been impossible :heart:
-
-
-## License
-
-This template and the code in it is licensed under the [MIT License](https://github.com/marcizhu/readme-chess/LICENSE).  
-If you use this on your own repositories, please add a link back to this repo :D
+想自己也整一个？模板来自 [marcizhu/readme-chess](https://github.com/marcizhu/readme-chess)。
